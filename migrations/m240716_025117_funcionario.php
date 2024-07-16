@@ -16,7 +16,6 @@ class m240716_025117_funcionario extends Migration
            'id' => $this->primaryKey(),
            'nome' => $this->string()->notNull(),
            'funcao'=> $this->string()->notNull(),
-
         ]);
     }
 
