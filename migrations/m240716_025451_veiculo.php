@@ -13,7 +13,7 @@ class m240716_025451_veiculo extends Migration
     public function safeUp()
     {
         $this->createTable('veiculo',[
-            'id' => $this->primareKey(),
+            'id' => $this->primaryKey(),
             'modelo' => $this->string()->notNull(),
             'marca' =>$this->string()->notNull(),
             'placa' => $this->string()->notNull()->unique(),
@@ -36,8 +36,8 @@ class m240716_025451_veiculo extends Migration
      */
     public function safeDown()
     {
-        echo "m240716_025451_veiculo cannot be reverted.\n";
-        $this->dropTable('{{%veiculo}}');
+        $this->dropForeignKey('veiculo_cliente_fk','veiculo');
+        $this->dropTable('veiculo');
         return false;
     }
 

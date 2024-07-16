@@ -26,7 +26,7 @@ class m240716_025117_funcionario extends Migration
     public function safeDown()
     {
         echo "m240716_025117_funcionario cannot be reverted.\n";
-        $this->dropTable('{{%funcionario}}');
+        $this->dropTable('funcionario');
     }
 
     /*
