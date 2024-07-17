@@ -27,8 +27,17 @@ class m240716_031535_servico extends Migration
             'veiculo',
             'id',
             'cascade'
-
         );
+
+        $this->addForeignKey(
+            'servico_funcionario_fk',
+            'servico',
+            'funcionario_id',
+            'funcionario',
+            'id',
+            'cascade'
+        );
+
 
     }
 
@@ -37,7 +46,8 @@ class m240716_031535_servico extends Migration
      */
     public function safeDown()
     {
-        $this->dropForeingKey('servico_veiculo_fk', 'servico');
+        $this->dropForeignKey('servico_veiculo_fk', 'servico');
+        $this->dropForeignKey('servico_funcionario_fk', 'servico');
         $this->dropTable('servico');
     }
 

@@ -31,14 +31,13 @@ class m240716_025451_veiculo extends Migration
 
         );
     }
-    /**
+    /**\
      * {@inheritdoc}
      */
     public function safeDown()
     {
         $this->dropForeignKey('veiculo_cliente_fk','veiculo');
         $this->dropTable('veiculo');
-        return false;
     }
 
     /*
